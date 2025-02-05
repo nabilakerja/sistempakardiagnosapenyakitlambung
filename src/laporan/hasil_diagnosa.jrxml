@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c103bfa-ecf1-4e8c-8def-c66aa56f29cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+    riwayat_diagnosa.id_diagnosa, 
+    riwayat_diagnosa.pasien_id, 
+    riwayat_diagnosa.penyakit_id,
+    pasien.nama_pasien, 
+    penyakit.nama_penyakit,
+    penyakit.solusi
+FROM riwayat_diagnosa
+JOIN pasien ON pasien.pasien_id = riwayat_diagnosa.pasien_id
+JOIN penyakit ON penyakit.penyakit_id = riwayat_diagnosa.penyakit_id
+ORDER BY riwayat_diagnosa.id_diagnosa;]]>
+	</queryString>
+	<field name="id_diagnosa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pasien_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="penyakit_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_penyakit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solusi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="131" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="107" backcolor="#006666" uuid="584bcd07-bf81-4107-b739-2435289e9e2e"/>
+				<staticText>
+					<reportElement x="93" y="18" width="361" height="56" forecolor="#FFFFFF" uuid="20ddbef0-0a58-404a-8388-1e469ee0ab38"/>
+					<textElement verticalAlignment="Middle">
+						<font size="27" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RSUD Sungai Gelam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="383" y="18" width="172" height="56" forecolor="#FFFFFF" uuid="b44c87f6-9097-4046-bbe0-d8a0d77d61bb"/>
+					<textElement verticalAlignment="Middle">
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Hasil Diagnosa]]></text>
+				</staticText>
+				<image>
+					<reportElement x="22" y="18" width="206" height="56" uuid="fa0f65e9-b4d5-4e35-b68b-8f15a13ed84c"/>
+					<imageExpression><![CDATA["C:\\stomachguard\\src\\gambar\\logors.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="22" y="74" width="533" height="33" forecolor="#FFFFFF" uuid="7e946a42-b428-4829-a9e5-eaacc5ce0787"/>
+					<textElement textAlignment="Center">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Jl. Ketaling No. KM. 21, Desa Sungai Gelam, Kecamatan Sungai Gelam, Kabupaten Muaro Jambi, Provinsi Jambi, dengan kode pos 36371, Telp: 0811-9005-5701, email : rsud.sungaigelammj@gmail.com]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="0" width="153" height="20" uuid="f76cf22d-61d0-48c2-87e2-ff275a172ca3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_diagnosa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="0" width="94" height="20" uuid="48801d52-ba3b-47ea-9911-57e3a6d198dd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Diagnosa :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="215" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="20" width="173" height="29" uuid="94b02017-7c20-4262-9b38-01ca3465b901"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="35" y="96" width="173" height="119" backcolor="#00CCCC" uuid="74709c14-638d-47c0-843a-cdc600538a2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_penyakit}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="35" y="67" width="173" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="22ee0c6c-b912-4c97-babe-0a7126f29fdc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="208" y="67" width="290" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="f24233b1-4ad9-4b1f-be07-c234e207569a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="35" y="20" width="100" height="29" uuid="df62ac33-f55a-45de-91fe-0ddc83a1e708"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="67" width="173" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="741a09c3-c01a-4eb8-ad15-3a7373bab470"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penyakit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="67" width="290" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="713eb3c4-7c55-4cca-b52f-03b7856ef23c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solusi]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="208" y="96" width="290" height="119" backcolor="#00CCCC" uuid="e1f475b7-8c03-484f-9695-2f6d283cdb66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solusi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

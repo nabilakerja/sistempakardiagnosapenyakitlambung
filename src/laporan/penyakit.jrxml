@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83db7bd6-c0dd-4874-8731-e8285a0913b6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM penyakit]]>
+	</queryString>
+	<field name="penyakit_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_penyakit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="definisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solusi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-28" width="597" height="107" backcolor="#006666" uuid="673511b9-c55b-4632-955c-755733f92d03"/>
+				<staticText>
+					<reportElement x="103" y="19" width="352" height="50" forecolor="#FFFFFF" uuid="6be9ddac-4d24-4407-987b-0d2382aa6051"/>
+					<textElement verticalAlignment="Middle">
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[RSUD Sungai Gelam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="365" y="18" width="211" height="51" forecolor="#FFFFFF" uuid="1d838d60-0686-4256-b00a-6ba0914f9760"/>
+					<textElement verticalAlignment="Middle">
+						<font size="20"/>
+					</textElement>
+					<text><![CDATA[DATA PENYAKIT]]></text>
+				</staticText>
+				<image>
+					<reportElement x="21" y="18" width="154" height="51" uuid="721e8276-34ed-4b36-a1a9-6c89a6bd5e0e"/>
+					<imageExpression><![CDATA["C:\\stomachguard\\src\\gambar\\logors.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="21" y="69" width="555" height="38" forecolor="#FFFFFF" uuid="74fb8cf7-f279-4cb3-b2e3-c665276bcd02"/>
+					<textElement textAlignment="Center">
+						<font size="11"/>
+					</textElement>
+					<text><![CDATA[Jl. Ketaling No. KM. 21, Desa Sungai Gelam, Kecamatan Sungai Gelam, Kabupaten Muaro Jambi, Provinsi Jambi, dengan kode pos 36371, Telp: 0811-9005-5701, email : rsud.sungaigelammj@gmail.com]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="69" y="41" width="53" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="451b744c-a772-4c52-acd0-b1dbf6f3a3b1"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="122" y="41" width="100" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="0243676f-5a3b-4d22-8501-960d673040e3"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Penyakit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="41" width="147" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="a368818f-53c2-45c1-b94c-b7310b59f0f2"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Definisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="369" y="41" width="131" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="cbd2ac90-db80-43ec-ae84-831aabd6bf51"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solusi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="122" y="0" width="100" height="20" uuid="85f93f0e-804f-4e5d-b6a8-19b7d8561db9"/>
+				<box leftPadding="4" bottomPadding="4">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{nama_penyakit}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="222" y="0" width="147" height="20" uuid="4bb3b107-9f82-453f-8d25-b816de6c9210"/>
+				<box leftPadding="4" bottomPadding="4">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{definisi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="369" y="0" width="131" height="20" uuid="89d23a41-a69e-47fc-8f7f-6d3fdd529358"/>
+				<box leftPadding="4" bottomPadding="4">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{solusi}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="69" y="0" width="53" height="20" uuid="4e06097b-9b77-47f5-b913-1fa75c919fbe"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{penyakit_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="119" splitType="Stretch">
+			<staticText>
+				<reportElement x="422" y="97" width="133" height="20" uuid="3e7e183b-7e31-4bc5-87b2-7a41878141d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dr. Deka Yuhendrizal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="88" width="19" height="20" uuid="d3684838-b637-4994-b53b-94cbec46c5a2"/>
+				<text><![CDATA[Of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="88" width="25" height="20" uuid="736d93d2-6bb6-4bd4-b245-3c7aac97bd04"/>
+				<text><![CDATA[Page]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="27" width="130" height="20" uuid="4b9f508f-2ea2-46fc-85d2-15b56893e281"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMMM yyyy",new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="88" width="18" height="20" uuid="abdaf6fa-df8f-4aa5-8c2f-fc567dfdd187"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="82" y="88" width="100" height="20" uuid="b062ffa7-8683-4a07-b82e-8807d25c60cc"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

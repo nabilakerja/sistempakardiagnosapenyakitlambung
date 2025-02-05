@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c103bfa-ecf1-4e8c-8def-c66aa56f29cc">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<parameter name="tanggal" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pasien" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    riwayat_diagnosa.id_diagnosa, 
+    riwayat_diagnosa.pasien_id, 
+    riwayat_diagnosa.penyakit_id,
+    pasien.nama_pasien, 
+    penyakit.nama_penyakit,
+    penyakit.solusi,
+    riwayat_diagnosa.tanggal_diagnosa
+FROM riwayat_diagnosa
+JOIN pasien ON pasien.pasien_id = riwayat_diagnosa.pasien_id
+JOIN penyakit ON penyakit.penyakit_id = riwayat_diagnosa.penyakit_id
+WHERE pasien.nama_pasien = $P{pasien} 
+  AND riwayat_diagnosa.tanggal_diagnosa LIKE CONCAT('%', $P{tanggal}, '%')
+ORDER BY riwayat_diagnosa.id_diagnosa;]]>
+	</queryString>
+	<field name="id_diagnosa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pasien_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="penyakit_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_penyakit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solusi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_diagnosa" class="java.time.LocalDateTime">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="131" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="107" backcolor="#006666" uuid="584bcd07-bf81-4107-b739-2435289e9e2e"/>
+				<staticText>
+					<reportElement x="93" y="18" width="361" height="56" forecolor="#FFFFFF" uuid="20ddbef0-0a58-404a-8388-1e469ee0ab38"/>
+					<textElement verticalAlignment="Middle">
+						<font size="27" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RSUD Sungai Gelam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="383" y="18" width="172" height="56" forecolor="#FFFFFF" uuid="b44c87f6-9097-4046-bbe0-d8a0d77d61bb"/>
+					<textElement verticalAlignment="Middle">
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[Hasil Diagnosa]]></text>
+				</staticText>
+				<image>
+					<reportElement x="22" y="18" width="206" height="56" uuid="fa0f65e9-b4d5-4e35-b68b-8f15a13ed84c"/>
+					<imageExpression><![CDATA["C:\\stomachguard\\src\\gambar\\logors.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="22" y="74" width="533" height="33" forecolor="#FFFFFF" uuid="7e946a42-b428-4829-a9e5-eaacc5ce0787"/>
+					<textElement textAlignment="Center">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Jl. Ketaling No. KM. 21, Desa Sungai Gelam, Kecamatan Sungai Gelam, Kabupaten Muaro Jambi, Provinsi Jambi, dengan kode pos 36371, Telp: 0811-9005-5701, email : rsud.sungaigelammj@gmail.com]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="128" y="5" width="82" height="20" uuid="f76cf22d-61d0-48c2-87e2-ff275a172ca3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_diagnosa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="5" width="94" height="20" uuid="48801d52-ba3b-47ea-9911-57e3a6d198dd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Diagnosa :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="37" width="173" height="29" uuid="62429721-db3b-4cd4-8651-e50fbf366bcb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="37" width="100" height="29" uuid="51d245d5-6133-4003-9f30-db5bd0ee7bf1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="222">
+			<staticText>
+				<reportElement x="54" y="19" width="173" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="09133a5e-69a5-41dc-b19e-a11e1906ebdd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="54" y="19" width="173" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="2246469e-add6-4ce3-8080-266777538dd7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="227" y="19" width="290" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="22f69ca8-0b30-4108-b92e-7248778d57c5"/>
+			</rectangle>
+			<textField>
+				<reportElement mode="Opaque" x="54" y="49" width="172" height="118" backcolor="#00CCCC" uuid="59c39092-e467-4f42-bb16-41961af4c3b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_penyakit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="19" width="290" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="9e434f7e-b6f4-4afe-be6f-3e4a9577a321"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solusi]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="228" y="49" width="290" height="118" backcolor="#00CCCC" uuid="0d892aa3-0629-4eb4-ada7-ada71161e288"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{solusi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="54" y="20" width="172" height="29" forecolor="#FFFFFF" backcolor="#006666" uuid="5f37f553-8ba9-431c-bc57-c4a2f482fae3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penyakit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="183" width="138" height="20" uuid="b38f237a-2dcc-431b-b3dc-bb80412c69cf"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Diagnosa :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="192" y="183" width="325" height="20" uuid="a03bf869-6853-475c-bd0c-66421d8c5b17"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal_diagnosa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="108">
+			<staticText>
+				<reportElement x="406" y="80" width="133" height="20" uuid="a966d241-88b9-44da-8b41-9e4b152ed416"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dr. Deka Yuhendrizal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="406" y="12" width="130" height="20" uuid="71aee480-b697-4999-b54b-c28fdc4fc902"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("'Jakarta, 'dd MMMMM yyyy",new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4db7fdda-e589-4115-9881-f1730c21aa65">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM 
+gejala]]>
+	</queryString>
+	<field name="id_gejala" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_gejala" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-22" y="-28" width="597" height="107" backcolor="#006666" uuid="a212ca43-5340-4102-b557-390054a0c652"/>
+				<staticText>
+					<reportElement x="104" y="18" width="361" height="56" forecolor="#FFFFFF" uuid="6e2181ee-8878-4d64-8497-01bb00f23605"/>
+					<textElement verticalAlignment="Middle">
+						<font size="27" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RSUD Sungai Gelam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="383" y="18" width="194" height="56" forecolor="#FFFFFF" uuid="b5dc3d6b-74a5-453d-b9bc-e6c02591fbc9"/>
+					<textElement verticalAlignment="Middle">
+						<font size="24"/>
+					</textElement>
+					<text><![CDATA[DATA GEJALA]]></text>
+				</staticText>
+				<image>
+					<reportElement x="22" y="18" width="206" height="56" uuid="cbc9d718-be8d-41e4-99fb-d1c71935429c"/>
+					<imageExpression><![CDATA["C:\\stomachguard\\src\\gambar\\logors.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="22" y="74" width="555" height="33" forecolor="#FFFFFF" uuid="ce0201a0-20f5-4989-b2e3-45fadcf39bfb"/>
+					<textElement textAlignment="Center">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Jl. Ketaling No. KM. 21, Desa Sungai Gelam, Kecamatan Sungai Gelam, Kabupaten Muaro Jambi, Provinsi Jambi, dengan kode pos 36371, Telp: 0811-9005-5701, email : rsud.sungaigelammj@gmail.com]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="82" y="41" width="65" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="1ab2bb63-f6c2-4421-af62-fab7849cbe46"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="147" y="41" width="327" height="20" forecolor="#FFFFFF" backcolor="#006666" uuid="86b935f6-28d3-458a-816d-50f301c8538d"/>
+				<box>
+					<pen lineWidth="1.5" lineColor="#6666FF"/>
+					<topPen lineWidth="1.5" lineColor="#6666FF"/>
+					<leftPen lineWidth="1.5" lineColor="#6666FF"/>
+					<bottomPen lineWidth="1.5" lineColor="#6666FF"/>
+					<rightPen lineWidth="1.5" lineColor="#6666FF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Gejala]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="82" y="0" width="65" height="20" uuid="a6ab7b94-52d2-41e7-a26d-5d559a302a3f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_gejala}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="0" width="327" height="20" uuid="3cf322f9-2b74-4f0c-8958-86539a8c88f2"/>
+				<box topPadding="0" leftPadding="4">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_gejala}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="98" width="25" height="20" uuid="4ab12408-ce73-41ea-af69-929f853ee769"/>
+				<text><![CDATA[Page]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="82" y="98" width="100" height="20" uuid="077e27d9-0140-4119-8d90-e7b9fb07270b"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="98" width="18" height="20" uuid="ced944d4-c2b8-4809-ae0d-45d57d1f467d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="63" y="98" width="19" height="20" uuid="404347e1-af38-413d-8a5f-5f8e39471f67"/>
+				<text><![CDATA[Of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="110" width="133" height="20" uuid="f4d3dbdb-7a51-4d16-8dc9-96ce963d1ed7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dr. Deka Yuhendrizal]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
